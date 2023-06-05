@@ -11,7 +11,9 @@ DIRECTORY_LIST = []
 FILE_LIST = []
 
 source_dir = os.environ["REZ_BUILD_SOURCE_PATH"]
-FILE_LIST = glob.glob("*.h")
+all_files = glob.glob(source_dir + "/*.h")
+for f in all_files:
+    FILE_LIST.append(os.path.basename(f))
 
 
 def copy_dirs_and_files(dirs, files, source_dir, dest_dir):
