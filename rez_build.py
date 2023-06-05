@@ -14,6 +14,7 @@ source_dir = os.environ["REZ_BUILD_SOURCE_PATH"]
 all_files = glob.glob(source_dir + "/*.h")
 for f in all_files:
     FILE_LIST.append(os.path.basename(f))
+# NOTE: This script was modified to copy the headers into a "include" directory
 
 
 def copy_dirs_and_files(dirs, files, source_dir, dest_dir):
