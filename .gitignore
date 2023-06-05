@@ -1,0 +1,8 @@
+# Ignore REZ build directory
+_rez_build
+docs
+*.pyc
+__pycache__
+
+# Development apps
+.vscode
