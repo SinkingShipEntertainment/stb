@@ -18,6 +18,9 @@ for f in all_files:
 
 def copy_dirs_and_files(dirs, files, source_dir, dest_dir):
 
+    if not os.path.isdir(dest_dir):
+        os.makedirs(dest_dir)
+
     # Copy all the desired dirs
     for d in dirs:
         src_d = source_dir + "/" + d
@@ -73,6 +76,8 @@ if __name__ == "__main__":
     # Collect the source and destination directories
     source_dir = os.environ["REZ_BUILD_SOURCE_PATH"]
     dest_dir = os.environ["REZ_BUILD_INSTALL_PATH"]
+
+    dest_dir += "/include"
 
     if os.environ["REZ_BUILD_TYPE"] == "local":
         # Clear the destination directory if it exists
